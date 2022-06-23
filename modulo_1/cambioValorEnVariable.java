@@ -1,6 +1,5 @@
 public class cambioValorEnVariable {
     public static void main(String[] args) {
-        // Your code here!
         
         int a = -10;
         int b = -a;/*- - = + por lo tanto cambia de negativo a positivo*/

@@ -1,6 +1,5 @@
 public class cursor {
     public static void main(String[] args) throws Exception {
-        // Your code here!
         
         int a = 2;
         System.out.println("Resultado A antes: "+ a);
