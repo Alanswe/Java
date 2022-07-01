@@ -90,7 +90,7 @@ public class bloque_6_switch {
 
     // Alternativa ternario 
     // usa el array_meses
-    String solucion = num_mes > 12 ? "no entiendo" : num_mes-1;
+    String solucion = num_mes > 12 ? "no entiendo" : array_meses[num_mes-1];
     System.out.println(solucion);
 
 
