@@ -14,8 +14,13 @@ public class Counter {
         model = s;
     }
     
-    Counter(){
-    
+    Counter(int value,int maxValue, String model){
+        this.value = value;
+        this.maxValue = maxValue >= 100_000 ? 100_000 : maxValue <= 1_000 ? 1_000 : maxValue;
+        this.model = model;
     }
-    
+ 
+    Counter(){
+        
+    }
 }
