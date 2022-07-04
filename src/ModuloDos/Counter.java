@@ -16,7 +16,8 @@ public class Counter {
     
     Counter(int value,int maxValue, String model){
         this.value = value;
-        this.maxValue = maxValue >= 100_000 ? 100_000 : maxValue <= 1_000 ? 1_000 : maxValue;
+        this.maxValue = maxValue >= 100_000 ? 100_000 : // para que sea menor que 100_000
+                maxValue <= 1_000 ? 1_000 : maxValue; // para que sea mayor que 1_000
         this.model = model;
     }
  
