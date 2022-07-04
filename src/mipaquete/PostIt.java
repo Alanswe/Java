@@ -20,10 +20,15 @@ public class PostIt {
         alto = ancho = 60;
     }
     
-    PostIt(String m){
-        color = "Verde";
-        msg = m;
-        alto = ancho = 60;
+//    PostIt(String m){
+//        color = "Verde";
+//        msg = m;
+//        alto = ancho = 60;
+//    }
+    
+    
+    PostIt(String c){
+        this(c,"Hola",137,137);
     }
     
     
