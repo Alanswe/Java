@@ -18,5 +18,6 @@ public class Test {
     System.out.printf("%nEl Contador %d tiene un máximo de %d y su modelo es %s %n",b.value,b.maxValue,b.model);
     System.out.printf("%nEl Contador %d tiene un máximo de %d y su modelo es %s %n",c.value,c.maxValue,c.model);
     
+        System.out.println(rect1.perimetro);
     }
 }
