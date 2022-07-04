@@ -8,7 +8,7 @@ public class Test {
         PostIt b = new PostIt("Verde","BB",30,50);
         PostIt c = new PostIt("Rojo","CC",100,100);
         PostIt d = new PostIt();
-        PostIt e = new PostIt("EE");
+        PostIt e = new PostIt("Morado");
 
         
         /*

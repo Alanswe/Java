@@ -27,8 +27,13 @@ public class PostIt {
 //    }
     
     
+//    PostIt(String c){
+//        this(c,"Hola",137,137);
+//    }
+    
     PostIt(String c){
-        this(c,"Hola",137,137);
+        this();
+        color = c;
     }
     
     
