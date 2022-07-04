@@ -1,10 +1,6 @@
 
-package com.mycompany.primer_hola_mundo;
+package ModuloCero;
 
-/**
- *
- * @author alan
- */
 public class primer_hola_mundo {
 
     public static void main(String[] args) {

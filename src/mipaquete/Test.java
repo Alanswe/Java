@@ -13,7 +13,6 @@ public class Test {
         a.alto = 60;
         a.ancho = 60;
         
-        
         b.color = "verde";
         b.msg = "BB";
         b.alto = 30;
@@ -23,11 +22,6 @@ public class Test {
         c.msg = "CC";
         c.alto = 100;
         c.ancho = 100;
-        
-        d.color = "morado";
-        d.msg = "DD";
-        d.alto = 50;
-        d.ancho = 50;
         
         System.out.printf("%nEl postit a tiene %d de alto y %d de ancho, con color %s y su mensaje es %s %n",a.alto,a.ancho,a.color,a.msg);
         System.out.printf("%nEl postit b tiene %d de alto y %d de ancho, con color %s y su mensaje es %s %n",b.alto,b.ancho,b.color,b.msg);
