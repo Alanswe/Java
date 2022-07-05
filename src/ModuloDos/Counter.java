@@ -65,18 +65,52 @@ public class Counter {
     }
     
     boolean increment(){
-        if (value > 0 && value < 100_000) {
-            value += 1;
+        if (value > 0 && value < 100_000) { // value != maxValue en el ecaso que controles el filtro del value en el constructor
+            value++;
         }
         return value > 0 && value < 100_000;
     }
     
     boolean increment(int n){
-        if (value > 0 && value < 100_000) {
-            value += n;
-        }
-        return value > 0 && value < 100_000;
+        if ((n + value < maxValue) && (value > 0 && value < 100_000)){
+                value += n;
+                return true;
+            }
+        return false; 
     }
+    
+    /*
+    // del profesor 2
+    boolean increment(int n){
+        boolean resultado = !(value + n > maxValue);
+        value = value + n > maxValue ? maxValue : value + n;
+        return resultado; 
+    }
+    */
+    
+    /*
+    boolean increment(int n){
+        if (n + value < maxValue){
+            if (value > 0 && value < 100_000) {
+                value += n;
+                // return true
+            }
+        }
+        return (n + value < maxValue) ? value > 0 && value < 100_000 : false; // solo false
+    }
+    */
+    
+    /*
+    // El de el profesor
+    boolean increment(int n){
+        for (int i = 0; i < n; i++){
+            if (!increment()){
+                return false;
+            }
+        }
+        return true;
+    }
+    */
     
     boolean reset(){
         //value >= 100_000 ? value = 0 : false;
@@ -85,14 +119,12 @@ public class Counter {
             value = 0;
             return true;
         } else {
-            return value >= 100_000;
+            return value >= 100_000; // false
         }
     }
     
     String show(){
         return "Contador: modelo " + this.model + " y valor " + this.value + " de " + this.maxValue + ".";
     }
-    
-    
     
 }
