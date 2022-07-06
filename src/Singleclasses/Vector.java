@@ -8,6 +8,8 @@ public class Vector {
         Vector v1 = new Vector(2,5);
         Vector v2 = new Vector(8);
         Vector v3 = new Vector(4,2);
+        Vector v4 = new Vector(0,4);
+        Vector v5 = new Vector(0,15);
         
         System.out.println("Prueba de suma => "+v1.suma(v3).show());
         System.out.println("Prueba de resta => "+v1.resta(v3).show());
@@ -24,10 +26,13 @@ public class Vector {
         
         System.out.println("Prueba de opera e => "+v1.prod(2).show());
         System.out.println(" <= Prueba de opera f => "+v1.opera(10).show());
-        System.out.println("Prueba de opera g => ");
-        System.out.println("Prueba de opera h => ");
-        System.out.println("Prueba de opera i => ");
-        System.out.println("Prueba de opera j => ");
+        System.out.println("Prueba de opera g => "+v1.prodE(v3));
+        System.out.println("Prueba de opera h => "+v1.prodV(v3));
+        System.out.println("Prueba de opera i => "+v1.esParalelo(v3));
+        System.out.println("Prueba de opera i_2 => "+v5.esParalelo(v4));
+        System.out.println("Prueba de opera j => "+v1.esPerpendicular(v3));
+        System.out.println("Prueba de opera j_2 => "+v5.esPerpendicular(v4));
+
 
     }
     
@@ -100,25 +105,21 @@ public class Vector {
         System.out.printf("%d * (%d, %d) = (%d, %d)",n,this.x,this.y,this.x*n,this.y*n);
         return prod(n);
     }
-    /*
+    
     int prodE(Vector v){ // g producto escalar de vectores.
-        
+        return this.x * v.x + this.y * v.y;
     }
-    */
-    /*
+    
     int prodV(Vector v){ // h producto vectorial de vectores.
-    
+        return this.x * v.y - this.y * v.x;
     }
-    */
-    /*
+    
     boolean esPerpendicular(Vector v){ // i
-    
+        return x == 0 && y == 0 || v.x == 0 && v.y == 0 ? false : prodV(v) == 0;
     }
-    */
-    /*
+   
     boolean esParalelo(Vector v){ // j
-    
+        return x == 0 && y == 0 || v.x == 0 && v.y == 0 ? false : prodE(v) == 0;
     }
-    */
     
 }
