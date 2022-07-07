@@ -7,6 +7,7 @@ public class Point {
     String colour; // = this.validaColor();
     char symbol;
     
+    /*
     String validaColor (){
         switch (colour) {
             case "black": 
@@ -25,16 +26,17 @@ public class Point {
                 return "\u001B[0m"; 
         }
     }
+    */
+    
     
     public static void main(String[] args) {
         Point p1 = new Point();
-        //Point p2 = new Point(2,5,"red",'$');
+        Point p2 = new Point((byte)2,(byte)5,"red",'$');
+        Point p3 = new Point((byte)7, (byte)5,"red",'@');
     
-        System.out.println(p1.showSimple());
-    }
-    
-    String showSimple(){
-        return "Vector: valor x=" + this.x + " y valor y=" + this.y + ", simbolo " + this.symbol + "y color " + this.colour + ".";
+        p2.show();
+        p2.showSimple();
+
     }
     
     // Constructores
@@ -59,5 +61,85 @@ public class Point {
         this.colour = colour == "red" || colour == "green" ||colour == "yellow" ||colour == "blue" ||colour == "purple" ? colour : "black";
         this.symbol = symbol;
     }
+    
+        
+    Point(Point pointOriginal){ //point copia
+        this.x = pointOriginal.x;
+        this.y = pointOriginal.y;
+        this.colour = pointOriginal.colour;
+        this.symbol = pointOriginal.symbol;
+    }
+    
+    // Métodos
+    
+    void showSimple(){
+        System.out.printf("Point '%s' de color %s (%d, %d)%n",this.symbol,this.colour,this.x,this.y);
+    }
+    
+    boolean up(){
+        if (y == 7){
+            return false;
+        } else {
+            this.y++;
+            return true;
+        }
+    }
+    
+    boolean down(){
+        if (y == 12){
+            return false;
+        } else {
+            this.y++;
+            return true;
+        }
+    }
+    
+    boolean left(){
+        if (x == 7){
+            return false;
+        } else {
+            this.x++;
+            return true;
+        }
+    }
+    
+    boolean right(){//12
+        if (x == 12){
+            return false;
+        } else {
+            this.x++;
+            return true;
+        }
+    }
+    
+    void show(){
+        int[] lineax = {0, 1, 2, 3, 4, 5, 6, 7};
+        int[] lineay = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        System.out.println("");
+        
+        for (int numerox : lineax){
+            for (int numeroy: lineay){
+                if (numeroy <= 11){
+                    if (numeroy == 0){
+                        System.out.print(7-numerox + " ");
+                    }
+                    System.out.print("+");System.out.print("--");
+                } else {
+                    System.out.print("+");
+                    if (7 > numerox){
+                        System.out.printf("%n  |  |  |  |  |  |  |  |  |  |  |  |  |%n");
+                        break;
+                    } else {
+                        System.out.printf("%n  0  1  2  3  4  5  6  7  8  9 10 11 12%n");
+                        break;
+                    }
+                }
+            }
+        }
+        
+        
+    
+    }
+    
     
 }
