@@ -72,15 +72,13 @@ public class Person {
     
     boolean changeName(String name, String surname){
         for (int i = 0; i < name.length(); i++){
-            if (name.charAt(i) >= 'A' && name.charAt(i) <= 'Z' || name.charAt(i) == ' '){
+            if (!(name.charAt(i) >= 'A' && name.charAt(i) <= 'Z' || name.charAt(i) == ' ')){
                 }
                 return false;
             }
         
-        
-        
         for (int i = 0; i < surname.length(); i++){
-            if (surname.charAt(i) >= 'A' && surname.charAt(i) <= 'Z'|| surname.charAt(i) == ' '){
+            if (!(surname.charAt(i) >= 'A' && surname.charAt(i) <= 'Z'|| surname.charAt(i) == ' ')){
                 }
                 return false;
             }
@@ -92,8 +90,45 @@ public class Person {
         if (surname.charAt(0) == ' ' || surname.charAt(surname.length() - 1) == ' '){
             return false;
             }
+     
+        /* TODO:
+            Ninguno puede ser broken después del cambio: longitud debe ser como mucho 20.
+            No puede ser ninguno blanco: al menos debe haber una letra del alfabeto inglés.
+        */
         
-        return false;
+        
+        
+        
+        this.name = name;
+        this.surname = surname;
+        return true;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    boolean changeSurname(String surname){
+        return changeName(name, this.surname);
+    }
+    
+    
+    boolean changeName(String name){
+        return changeName(this.name, surname);
     }
     
     short getAge(){
@@ -101,21 +136,29 @@ public class Person {
     }
     
     boolean sameAge(Person p){
+        return this.yearOfBirth == p.yearOfBirth;
+        
+        /*
         if (this.yearOfBirth == p.yearOfBirth){
             return true;
         } else {
             return false;
             }
+        */
     }    
     
     boolean compareWith(Person p){
-        if (this.yearOfBirth == p.yearOfBirth && 
-                this.name == p.name &&
-                this.surname == p.surname){
-            return true;
-        } else {
-            return false;
-        }
+        return (this.yearOfBirth == p.yearOfBirth && this.name == p.name &&
+                this.surname == p.surname);
+        /*
+            if (this.yearOfBirth == p.yearOfBirth && 
+                    this.name == p.name &&
+                    this.surname == p.surname){
+                return true;
+            } else {
+                return false;
+            }
+        */
     }
     
     // MAIN
@@ -142,7 +185,9 @@ public class Person {
         System.out.println("");
         
         System.out.println("Prueba changeName: ");
+        p3.show();
         System.out.println(p3.changeName("Juanito", "Fernandito"));
+        p3.show();
         System.out.println("");
 
         System.out.println("Prueba sameAge: ");
