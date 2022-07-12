@@ -1,8 +1,5 @@
 package Singleclasses;
 
-import java.time.Period;
-import java.time.LocalDate;
-
 public class Person {
     
     // Propiedades
@@ -16,22 +13,50 @@ public class Person {
     // Constructores
     
     Person(String name, String surname){
-    this.name = name;
-    this.surname = surname;
+        this.name = name.length() > 20 ? name.substring(0,20): name;
+        this.brokenName = name.length() > 20;
+        
+        this.surname = surname.length() > 20 ? surname.substring(0,20): surname;
+        this.brokenSurname = surname.length() > 20;
+        
+
+        /*
+        if (name.length() > 20){
+            this.brokenName = true;
+            // recortarlo
+            String newName = name.substring(0,20);
+            this.name = newName;
+        } 
+        else {
+            this.brokenName = false;
+            this.name = name;
+        }
+        
+        if (surname.length() > 20){
+            this.brokenSurname = true;
+            // recortarlo
+            String newSurname = surname.substring(0,20);
+            this.name = newSurname;
+        }
+        else {
+            this.brokenSurname = false;
+            this.surname = surname;
+        }
+        */
     }
     
     Person(short yearOfBirth,String name, String surname){
-    this.yearOfBirth = yearOfBirth;
-    this.name = name;
-    this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
+        this.name = name;
+        this.surname = surname;
     }
     
-    Person(Person p){
-    this.yearOfBirth = p.yearOfBirth;
-    this.name = p.name;
-    this.surname = p.surname;
-    this.brokenName = p.brokenName;
-    this.brokenSurname = p.brokenSurname;
+    public Person(Person p){
+        this.yearOfBirth = p.yearOfBirth;
+        this.name = p.name;
+        this.surname = p.surname;
+        this.brokenName = p.brokenName;
+        this.brokenSurname = p.brokenSurname;
     }
     
     // Métodos
@@ -47,7 +72,11 @@ public class Person {
     
     
     boolean changeName(String name, String surname){
-        //if (name && surname)
+//        for (var letra : name){
+//            if (letra > 'A' && letra < 'Z'){
+//                    
+//                }
+//            }
         return false; // pass
     }
     
@@ -75,16 +104,22 @@ public class Person {
         }
     }
     
+    // MAIN
+    
     public static void main(String[] args) {
         Person p1 = new Person((short)2000,"Pepe","Fernandez");
         Person p2 = new Person((short)1996,"María","Rodriguez");
         Person p3 = new Person((short)2000,"Juan","Fernandez");
         Person p4 = new Person((short)2000,"Pepe","Fernandez");
         Person p5 = new Person("Pepe","Segovia");
+        Person p6 = new Person((short)1997,"antonio josé juan","Verde de la vera");
+
 
         System.out.println("Prueba show :");
         p5.show(); // (acaba de nacer)
-        p1.show(); System.out.println("");
+        p1.show(); 
+        p6.show(); // tiene que recortar
+        System.out.println("");
         
         System.out.println("Prueba isBroken: ");
         System.out.println(p1.isBroken());
