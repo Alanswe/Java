@@ -123,5 +123,9 @@ public class Caso1 {
     System.out.printf("En array 4 hay %d True y %d False%n",contadorTrue,contadorFalse);
     System.out.println("==================================");
     
+    
+        for (boolean num: array4){
+            System.out.print(num + " ");
+        }    
     }
 }
