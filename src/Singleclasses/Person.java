@@ -46,9 +46,8 @@ public class Person {
     }
     
     Person(short yearOfBirth,String name, String surname){
+        this(name,surname);
         this.yearOfBirth = yearOfBirth;
-        this.name = name;
-        this.surname = surname;
     }
     
     public Person(Person p){
@@ -62,7 +61,7 @@ public class Person {
     // Métodos
     
     void show(){
-        System.out.printf("Person %s %s de %d años.%n",this.name,this.surname,this.getAge()); // calcular la edad
+        System.out.printf("Person %s %s de %d años.%n",this.name,this.surname,this.getAge());
     }
     
     
@@ -72,18 +71,33 @@ public class Person {
     
     
     boolean changeName(String name, String surname){
-//        for (var letra : name){
-//            if (letra > 'A' && letra < 'Z'){
-//                    
-//                }
-//            }
-        return false; // pass
+        for (int i = 0; i < name.length(); i++){
+            if (name.charAt(i) >= 'A' && name.charAt(i) <= 'Z' || name.charAt(i) == ' '){
+                }
+                return false;
+            }
+        
+        
+        
+        for (int i = 0; i < surname.length(); i++){
+            if (surname.charAt(i) >= 'A' && surname.charAt(i) <= 'Z'|| surname.charAt(i) == ' '){
+                }
+                return false;
+            }
+        
+        if (name.charAt(0) == ' ' || name.charAt(name.length() - 1) == ' '){
+            return false;
+            }
+        
+        if (surname.charAt(0) == ' ' || surname.charAt(surname.length() - 1) == ' '){
+            return false;
+            }
+        
+        return false;
     }
     
     short getAge(){
-        
         return (short)(2022 - this.yearOfBirth);
-
     }
     
     boolean sameAge(Person p){
@@ -112,7 +126,7 @@ public class Person {
         Person p3 = new Person((short)2000,"Juan","Fernandez");
         Person p4 = new Person((short)2000,"Pepe","Fernandez");
         Person p5 = new Person("Pepe","Segovia");
-        Person p6 = new Person((short)1997,"antonio josé juan","Verde de la vera");
+        Person p6 = new Person((short)1997,"Antonio joselito juanito","Verde de la vera del campo");
 
 
         System.out.println("Prueba show :");
@@ -123,6 +137,8 @@ public class Person {
         
         System.out.println("Prueba isBroken: ");
         System.out.println(p1.isBroken());
+        System.out.println(p6.isBroken());
+
         System.out.println("");
         
         System.out.println("Prueba changeName: ");

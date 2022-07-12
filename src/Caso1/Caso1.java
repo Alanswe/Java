@@ -102,12 +102,18 @@ public class Caso1 {
 
     //ejercicio 6 --------------------------------------------------------------
     boolean[] array4 = new boolean[array1.length];
-
+    
+    /*
     for (int i = 0; i < array1.length; i++) {
         if (i%3 != 0){
         array4[i] = true;
         }
     } 
+    */
+    
+    for (int i = 0; i < array1.length; i++) {
+        array4[i] = (i + 1) % 3 != 0;
+    }
     
     int contadorTrue = 0;
     int contadorFalse = 0;
@@ -123,9 +129,11 @@ public class Caso1 {
     System.out.printf("En array 4 hay %d True y %d False%n",contadorTrue,contadorFalse);
     System.out.println("==================================");
     
-    
+    /*
         for (boolean num: array4){
             System.out.print(num + " ");
         }    
+    */
+    
     }
 }
