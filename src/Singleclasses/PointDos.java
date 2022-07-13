@@ -142,8 +142,44 @@ public class PointDos {
             System.out.println(pasiveLine());
         }
         System.out.println(bottomLine());
-        this.showSimple(colourCode);    
+        this.showSimple(colourCode); 
     }
+    
+    // Métodos publicos
+        
+    public String getColour(){
+        return colour;
+    }
+    
+    public byte[] getCoords(){
+        return new byte[]{x,y};
+
+//        byte[] coords = {x,y};
+//        for (int num: coords){
+//            System.out.print(num + " ");
+//        }
+//        
+    }
+    
+    // Getters
+    
+    public int getId() {
+        return id;
+    }
+
+    public char getSymbol() {
+        return symbol;
+    }
+
+    // setters
+    
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
+    }
+    
+    // Métodos estatic
+
+    // MAIN
     
     public static void main(String[] args) {
         
@@ -189,6 +225,15 @@ public class PointDos {
         p1.showSimple();
         System.out.println();
         
+        System.out.println("Metodos publicos");
+        System.out.println("===================================");        
+        PointDos p4 = new PointDos((byte)5, (byte)3, "red", '#');
+        p4.getCoords();
+        System.out.println("\n");
+
+        System.out.println("Metodos estáticos");
+        
+        System.out.println("\n");
 
         
         System.out.println("Prueba de método show");
