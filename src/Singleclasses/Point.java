@@ -73,8 +73,13 @@ public class Point {
     // Métodos
     
     void showSimple(){
-        System.out.printf("Point '%s' de color %s (%d, %d)%n",this.symbol,this.colour,this.x,this.y);
+        showSimple("\033[30m");
     }
+    
+    void showSimple(String colourCode){
+        System.out.printf("%sPoint %c de color %s (%d, %d)%n\033[30m", colourCode, symbol, colour, x, y);        
+    }
+    
     
     boolean up(){
         if (y == 7){

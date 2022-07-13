@@ -91,41 +91,39 @@ public class Person {
             return false;
             }
      
-        /* TODO:
-            Ninguno puede ser broken después del cambio: longitud debe ser como mucho 20.
-            No puede ser ninguno blanco: al menos debe haber una letra del alfabeto inglés.
-        */
         
+        int blancosName = 0;
+        for (int i = 1; i < name.length() - 2; i++) {
+            if(name.charAt(i) == ' ')
+                blancosName++;
+        }
         
+        int blancosSurname = 0;
+        for (int i = 1; i < surname.length() - 2; i++) {
+            if(surname.charAt(i) == ' ')
+                blancosSurname++;
+        }
         
+        if (blancosName > 1 || blancosSurname > 1) {
+            return false;
+        }
         
+        if(name.length() > 20 || surname.length() > 20) {
+            return false;
+        }
+        
+        if("".equals(name) || "".equals(surname)) {
+            return false;
+        }
+
         this.name = name;
         this.surname = surname;
         return true;
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     boolean changeSurname(String surname){
         return changeName(name, this.surname);
     }
-    
     
     boolean changeName(String name){
         return changeName(this.name, surname);
