@@ -25,12 +25,11 @@ public class Planeta {
         
         for (Persona objetoPersona : personas){
             System.out.println("ID : " + objetoPersona.getPersonaID() 
-                    + ", Nombre: " + objetoPersona.nombreCompleto() + ", DNI: " +
-                    objetoPersona.dniCompleto());
+                + ", Nombre: " + objetoPersona.nombreCompleto() + ", DNI: " +
+                objetoPersona.dniCompleto());
         }        
         System.out.println("");
 
-        
         System.out.println("Listados de personas B:");
         System.out.println("====================");
         
@@ -45,10 +44,7 @@ public class Planeta {
         System.out.println("Verificación de lectura");
         System.out.println("====================");
         System.out.println(personas[1].show());
-        
-        
-        // 
-        
-        
+
     }
+    
 }

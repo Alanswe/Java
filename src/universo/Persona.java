@@ -32,8 +32,7 @@ public class Persona {
         this.letraDNIMayusculas = letraDNIMayusculas;
         this.personaID = (int)nextPersonaID++; // suma 1 para el siguiente ID
     }
-    
-    
+
     // Métodos
     
     String dniCompleto(){
@@ -48,7 +47,6 @@ public class Persona {
         return generoFinalValidado;
     }
     
-    // valida genero ?
     String sexo(){
         String generoFinal = (this.genero == '-')? "No Definido":(this.genero == 'V') ?
                 "Varón":"Hembra";
@@ -70,11 +68,11 @@ public class Persona {
                 "Género: " + this.sexo();
     }
     
-    String showStatic(Persona p){
+    public static String showStatic(Persona p){
         return p.show();
     }
     
-    int calculaEdad(){
+    public int calculaEdad(){
         return 2022 - this.anioNacimiento;
     }
     
@@ -90,8 +88,6 @@ public class Persona {
         return personaID;
     }
     
-    
-    
     // MAIN
     public static void main(String[] args) {
         Persona p1 = new Persona("Pepe","Dominguez","Fernandez",'V');
@@ -99,7 +95,6 @@ public class Persona {
         Persona p3 = new Persona("Juana","Fernandez","Dominguez",'-');
 
         // Apartado 1
-        // SIN TERMIANR (NO FUNCIONA) 
         System.out.println("Get ID");
         System.out.println("=======");
         System.out.println(p1.personaID);  
@@ -134,16 +129,9 @@ public class Persona {
 
         System.out.println(p2.show());
         System.out.println("\n\n=== Estatico");
-        p2.showStatic(p3);
+        System.out.println(p2.showStatic(p3));
         System.out.println("");
-        
-        
-        
+
         }
-    
 
-
-    
-    
-    
 }
