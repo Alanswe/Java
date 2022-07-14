@@ -15,7 +15,7 @@ public class Planeta {
         Persona p9 = new Persona("David","Ravina","Díez",'V',1945,76532345,'A');
         Persona p10 = new Persona("Juan","Lechuga","Montes",'V',2012,98432232,'Z');
         
-        Persona[] personas = {p6,p7,p8,p9,p10};
+        Persona[] personas = {p1,p2,p3,p4,p5,p6,p7,p8,p9,p10};
        
         // Apartado 3
        
@@ -43,7 +43,7 @@ public class Planeta {
         System.out.println("");        
         System.out.println("Verificación de lectura");
         System.out.println("====================");
-        System.out.println(personas[1].show());
+        System.out.println(personas[7].show());
 
     }
     
