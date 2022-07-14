@@ -39,7 +39,7 @@ public class Persona {
         String numeroDniCompleto = (this.DNISinLetra == 0 || this.letraDNIMayusculas == ' ') ? 
                 null: "" + this.DNISinLetra + this.letraDNIMayusculas;
         return numeroDniCompleto;
-    };
+    }
     
     private char validaGenero(){
         char generoFinalValidado = (this.genero == ' ')? '-':(this.genero == 'V') ?
@@ -132,6 +132,6 @@ public class Persona {
         System.out.println(p2.showStatic(p3));
         System.out.println("");
 
-        }
+    }
 
 }
