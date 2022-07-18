@@ -24,14 +24,14 @@ public class _1_OverviewPolimorphism2 {
         System.out.println("Analizando a3");
         System.out.println(a3 instanceof GatoMejorado);
         System.out.println(a3 instanceof AnimalMejorado);
-//        System.out.println(a3 instanceof PerroMejorado);
-//        System.out.println(a3 instanceof OsoMejorado);
+        System.out.println((AnimalMejorado)a3 instanceof PerroMejorado);
+        System.out.println((AnimalMejorado)a3 instanceof OsoMejorado);
 
         System.out.println("Analizando a4");
-//        System.out.println(a4 instanceof GatoMejorado);
+        System.out.println((AnimalMejorado)a4 instanceof GatoMejorado);
         System.out.println(a4 instanceof AnimalMejorado);
         System.out.println(a4 instanceof PerroMejorado);
-//        System.out.println(a4 instanceof OsoMejorado);
+        System.out.println((AnimalMejorado)a4 instanceof OsoMejorado);
 
         System.out.println("Analizando a5");
         System.out.println(a5 instanceof GatoMejorado);
@@ -40,9 +40,9 @@ public class _1_OverviewPolimorphism2 {
         System.out.println(a5 instanceof OsoMejorado);
 
         System.out.println("Analizando a6");
-//        System.out.println(a6 instanceof GatoMejorado);
+        System.out.println((AnimalMejorado)a6 instanceof GatoMejorado);
         System.out.println(a6 instanceof AnimalMejorado);
-//        System.out.println(a6 instanceof PerroMejorado);
+        System.out.println((AnimalMejorado)a6 instanceof PerroMejorado);
         System.out.println(a6 instanceof OsoMejorado);
         
     }
