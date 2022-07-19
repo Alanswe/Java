@@ -4,23 +4,38 @@ public abstract class Figura {
     
     private static int numFigs;
     private String color;
-    private int idFig;
+    private final int idFig;
     
     // Métodos
     
-    public abstract void show();
+//    public abstract void show();
+    public void show(){
+        System.out.printf(" (Id %d)%n",this.idFig);
+    }
     public abstract double area();
     public abstract double perimetro();
-
-    public String getColor() {
-        return color;
-    }
     
     // Constructor
     
     public Figura(String color){
         this.color = color;
         this.idFig = ++numFigs;
+    }
+
+    // Getters
+    
+    public String getColor() {
+        return color;
+    }
+    
+    public int getIdFig() {
+        return idFig;
+    }
+    
+    // Setters
+
+    public void setColor(String color) {
+        this.color = color;
     }
     
 }

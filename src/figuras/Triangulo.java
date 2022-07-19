@@ -2,16 +2,17 @@ package figuras;
 
 public class Triangulo extends Figura{
     
-    int numTriangulos;
-    int numLados = 3;
-    double base;
-    double altura;
+    private static int numTriangulos;
+    private static final int numLados = 3;
+    private double base;
+    private double altura;
       
     // Métodos 
     
     @Override
     public void show() {
-        System.out.printf("Ese Triangulo tiene un perímetro de %d y un area es %d.%n",(int)this.perimetro(),(int)this.area());
+        System.out.printf("Ese Triangulo tiene un perímetro de %d y un area de %d y su color es %s.",(int)this.perimetro(),(int)this.area(),this.getColor());
+        super.show();
     }
 
     @Override
@@ -30,6 +31,7 @@ public class Triangulo extends Figura{
         super(color);
         this.base = base;
         this.altura = altura;
+        numTriangulos++;
     }
        
     Triangulo(double base,double altura){

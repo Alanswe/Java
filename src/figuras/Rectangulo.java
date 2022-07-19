@@ -2,10 +2,10 @@ package figuras;
 
 public class Rectangulo extends Figura{
 
-    int numRectangulos;
+    private int numRectangulos;
     public static final int NUM_LADOS = 4;
-    double base;
-    double altura;
+    private double base;
+    private double altura;
     
     // Métodos
     
@@ -15,7 +15,8 @@ public class Rectangulo extends Figura{
     
     @Override
     public void show() {
-        System.out.printf("Ese %s tiene un perímetro de %d, un area de %d y su colos es %s.%n",this.isCuadrado() == true ? "Cuadrado" : "Rectangulo",(int)this.perimetro(),(int)this.area(),this.getColor());
+        System.out.printf("Este %s tiene un perímetro de %d, un area de %d y su color es %s.",this.isCuadrado() ? "cuadrado" : "rectangulo",(int)this.perimetro(),(int)this.area(),this.getColor());
+        super.show();
     }
 
     @Override
@@ -34,6 +35,7 @@ public class Rectangulo extends Figura{
         super(color);
         this.base = base;
         this.altura = altura;
+        numRectangulos++;
     }
     
     public Rectangulo(){
