@@ -21,7 +21,7 @@ public enum Mes {
 
     @Override
     public String toString() {
-        return "Mes{" + "nombreCompleto=" + nombreCompleto + ", numAsociado=" + 
+        return "Mes {" + "nombreCompleto= " + nombreCompleto + ", numAsociado= " + 
                 numAsociado + '}';
     }
 
