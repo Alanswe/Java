@@ -1,4 +1,4 @@
-package ModuloDos;
+package enumerados;
 
 public class Enum {
     public enum WeekDay {
