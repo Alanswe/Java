@@ -66,9 +66,9 @@ public class Test {
     
     public static int sumaMagica(int[] arr, TestIf filtro){
         int suma = 0;
-        for (int x : arr){
-            if (filtro.test(x))
-                suma += x;
+        for (int i : arr){
+            if (filtro.test(i))
+                suma += i;
         }
         return suma;
     }
