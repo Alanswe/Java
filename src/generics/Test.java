@@ -5,10 +5,11 @@ public class Test {
         ParejaDeString ps1 = new ParejaDeString();
         ParejaDeCuadrado pc1 = new ParejaDeCuadrado();
         
-        ParejaDe<String> p1 = new ParejaDe<>();
-//        ParejaDe<Cuadrado> p1 = new ParejaDe<>();
+        ParejaDe<String,Cuadrado> p1 = new ParejaDe<>();
+//        ParejaDe<Cuadrado> p2 = new ParejaDe<>();
+        TrioDe<String,Cuadrado,String> p3 = new TrioDe<>();
         
-        p1.elem1.
+//        ArrayDe<String> p4 = new ArrayDe<>(5);
         
         
               
