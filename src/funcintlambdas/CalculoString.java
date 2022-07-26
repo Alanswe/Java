@@ -1,4 +1,5 @@
 package funcintlambdas;
+import java.util.ArrayList;
 
 public class CalculoString {
     
@@ -9,6 +10,19 @@ public class CalculoString {
 //            return false;
 //        }
 //    }
+    
+        public static String[] compruebaStrings(String[] arr, TestString filtro){
+        ArrayList<String> arrayFinal = new ArrayList<>();
+        for (String i : arr){
+            if (filtro.comprueba(i) == true) {
+                arrayFinal.add(i);
+            }
+        }
+        String[] arrayReturn = new String[arrayFinal.size()];
+        arrayReturn = arrayFinal.toArray(arrayReturn);
+        return arrayReturn;
+        }
+    
     
     public static void main(String[] args) {
 //        System.out.println(SonIguales("Hola","Hola"));
@@ -24,7 +38,7 @@ public class CalculoString {
         System.out.println(contiene.comprueba("Hola . Adios"));
         
         System.out.println("================================");
-        TestString numCaracteres = s -> s.length() > 3;
+        TestString numCaracteres = s -> s.length() < 3;
         System.out.println(numCaracteres.comprueba("HOla me llamo Pepe"));
         System.out.println(numCaracteres.comprueba("Yo"));
         
@@ -47,19 +61,17 @@ public class CalculoString {
         String[] arrayDeStrings = {"holas","Adios","HOla me llamo Pepe.","Yo"};
         
         System.out.println("================================");
-        System.out.println(compruebaStrings(arrayDeStrings, empiezaPorA));
 
-        public static String[] compruebaStrings(String[] arr, TestString filtro){
-            String[] arrayFinal = {};
-            int contador = 0;
-            for (String i : arr){
-                if (filtro.comprueba(i) == true) {
-                    arrayFinal[contador] = i;
-                }
-            contador++;
-            }  
-            return arrayFinal;
+        for (String elem : compruebaStrings(arrayDeStrings, empiezaPorA)){
+            System.out.println(elem);
         }
     
+        System.out.println("================================");
+
+        for (String elem : compruebaStrings(arrayDeStrings, numCaracteres)){
+            System.out.println(elem);
+        }
+        
+        
     }
 }
