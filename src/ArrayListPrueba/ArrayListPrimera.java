@@ -99,36 +99,31 @@ public class ArrayListPrimera {
         System.out.println(mediaAl3);
         
         
-        int numMinAl3 = 0;
+        int numMinAl3 = 101;
         int numMaxAl3 = 0;
         
-//        for (int elem : al3){
-//            if (numMaxAl3 < elem){
-//                numMaxAl3 = elem;
-//            } else if (numMinAl3 > elem){
-//                numMinAl3 = elem;
-//            }
-//        }
-        
-        for (int i = 0; i < 10; i++) {
-            if (al3.get(i) < i){
-                numMaxAl3 = i;
-            } else if (numMinAl3 > i){
-                numMinAl3 = i;
+        for (int elem : al3){
+            if (numMaxAl3 < elem){
+                numMaxAl3 = elem;
+            } else if (numMinAl3 > elem){
+                numMinAl3 = elem;
             }
         }
         
         System.out.println(numMaxAl3);
         System.out.println(numMinAl3);
         
-        
+        System.out.println("===");
         System.out.println("eliminar los de 50");
-        for (int i = 0; i < 50; i++) {
-            if (al3.get(i) < i){
-            } else {
-                al3.remove(i);
+        
+
+        int contador = 9;
+        while(contador > 0) {
+            if (al3.get(contador) < 50){
+                al3.remove(contador);       
             }
-        }
+            contador--;
+        } 
         
         for (int elemen: al3){System.out.print(elemen + " ");}
         System.out.println("");

@@ -14,13 +14,17 @@ public class CalculoString {
         public static String[] compruebaStrings(String[] arr, TestString filtro){
         ArrayList<String> arrayFinal = new ArrayList<>();
         for (String i : arr){
-            if (filtro.comprueba(i) == true) {
+            if (filtro.comprueba(i)) {
                 arrayFinal.add(i);
             }
         }
-        String[] arrayReturn = new String[arrayFinal.size()];
-        arrayReturn = arrayFinal.toArray(arrayReturn);
-        return arrayReturn;
+        // Manera de hacerlo sin compactar
+//        String[] arrayReturn = new String[arrayFinal.size()];
+//        arrayReturn = arrayFinal.toArray(arrayReturn);
+//        return arrayReturn;
+
+        String[] arrayReturn;
+        return arrayReturn = arrayFinal.toArray(new String[arrayFinal.size()]);
         }
     
     
