@@ -1,6 +1,6 @@
 package _functionales;
 
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -49,6 +49,25 @@ public class Test {
         
         System.out.println(iguales.test(3, 4));
         System.out.println(iguales.test(3, 3));
+        System.out.println("================");
+        
+        Function<String, Integer> cuentaLetras = s -> s.length();
+        
+        System.out.println(cuentaLetras.apply("Holasdsfweofk"));
+        System.out.println("================");
+        
+        BiFunction<String, String, Integer> cuentatodasLetras = (s1, s2) -> s1.length() + s2.length();
+        
+        System.out.println(cuentatodasLetras.apply("Hola", "adios"));        
+        System.out.println("================");
 
+        UnaryOperator<Integer> cuadrado = x -> x * x;
+        
+        System.out.println(cuadrado.apply(4));
+        System.out.println("================");
+       
+        BinaryOperator<String> concatenados = (s, t) -> s + t;
+        
+        System.out.println(concatenados.apply("Hola ", "Mundo"));
     }
 }
