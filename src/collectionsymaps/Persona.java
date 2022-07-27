@@ -57,10 +57,7 @@ public class Persona {
                 ,new Persona("Antonio",1999),new Persona("Juan",1982),new Persona("Pedro",1970)
                 ,new Persona("Maria",2002),new Persona("Luz",2013),new Persona("Rocio",1993)
                 ,new Persona("Maria",1882),new Persona("Rosa",2005)};
-        
-        
-        
-        
+
         System.out.println(personas[0].compareTo(personas[1]));
         System.out.println(personas[0].compareTo(personas[0]));
         
@@ -68,6 +65,12 @@ public class Persona {
         imprime.accept(personas[0]);
         
         System.out.println("===============");
+        
+        for (Persona p : personas){
+            System.out.println(p.toString());
+        }
+        
+        System.out.println("=========== Ordenadas");
         
         Arrays.sort(personas);      
         
