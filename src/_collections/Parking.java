@@ -24,15 +24,15 @@ public class Parking {
         this.totalPlazas = totalPlazas;
         this.plazasLibres = totalPlazas;
         this.listaCoches = new ArrayList<>();  
-						// lista que contiene los coches
+        // lista que contiene los coches
         this.cantidadCochesColor = new HashMap<>();    
-						// cantidad de coches de cada color
+        // cantidad de coches de cada color
         this.cantidadCochesMarca = new HashMap<>();    
-						// cantidad de coches de cada marca
+        // cantidad de coches de cada marca
         this.cantidadCochesIguales = new HashMap<>();  
-						// cantidad de coches iguales       
+        // cantidad de coches iguales       
         this.setCoches = new HashSet<>();       
-						// set de coches
+        // set de coches
     }
     
     // está un coche en un parking 
@@ -41,7 +41,7 @@ public class Parking {
         // -1 si no está
         for(int i=0; i < listaCoches.size(); i++)
             if (listaCoches.get(i) == c) 
-								return i; 
+                return i; 
         return -1;
     }              
         
@@ -62,17 +62,17 @@ public class Parking {
 
         // añado nuevo coche al map de colores incrementando cuenta
         counter = cantidadCochesColor.containsKey(c.color) ? 
-							cantidadCochesColor.get(c.color): 0;
+            cantidadCochesColor.get(c.color): 0;
         cantidadCochesColor.put(c.color, ++counter);
         
         // añado nuevo coche al map de marca incrementando cuenta
         counter = cantidadCochesMarca.containsKey(c.marca) ?
-							 cantidadCochesMarca.get(c.marca): 0;
+            cantidadCochesMarca.get(c.marca): 0;
         cantidadCochesMarca.put(c.marca, ++counter);        
 
         // añado nuevo coche al map de coches diferentes incrementando cuenta
         counter = cantidadCochesIguales.containsKey(c) ?
-							 cantidadCochesIguales.get(c): 0;
+            cantidadCochesIguales.get(c): 0;
         cantidadCochesIguales.put(c, ++counter); 
         
         // añado nuevo coche al set
@@ -90,7 +90,7 @@ public class Parking {
         int indexCoche = getCocheIdx(c);
         if (indexCoche == -1) return false;            
 
-        // saco el coche del parking y aumento en 1 plazas libres
+            // saco el coche del parking y aumento en 1 plazas libres
             listaCoches.remove(indexCoche);
             plazasLibres++;
 
@@ -134,7 +134,7 @@ public class Parking {
         if(listaCoches.isEmpty()) return false;
 
         // obtengo la cantidad de coches dentro del parking y genero 
-				// núm aleatorio del índice 
+        // núm aleatorio del índice 
         
         int indexCoche = new Random().nextInt(listaCoches.size());
         Coche c = listaCoches.get(indexCoche);
@@ -146,9 +146,9 @@ public class Parking {
         // no hay coches
         if(listaCoches.isEmpty()) return false;
         // obtengo la cantidad de coches dentro del parking y genero 
-				// núm aleatorio del índice 
+        // núm aleatorio del índice 
         // muy interesante, si lo hago en orden normal, esto es un lío, 
-				// ya que va cambiando orden
+        // ya que va cambiando orden
         while(saleCocheAleatorio());
         return true;
     }  
@@ -160,7 +160,7 @@ public class Parking {
         for(Coche c : listaCoches)
             System.out.println("  " + c);
         System.out.println("Total coches: " + listaCoches.size() 
-							+ ", plazas libres: " + plazasLibres + ".");
+                    + ", plazas libres: " + plazasLibres + ".");
         System.out.println("");        
     }
     
@@ -172,8 +172,8 @@ public class Parking {
         for(Color k : cantidadCochesColor.keySet()){
             totalCoches += cantidadCochesColor.get(k);
             System.out.println("El coche de color " + k.getName() 
-										+ " se repite " + cantidadCochesColor.get(k) 
-                    + (cantidadCochesColor.get(k) == 1 ? " vez." : " veces."));
+                + " se repite " + cantidadCochesColor.get(k) 
+                + (cantidadCochesColor.get(k) == 1 ? " vez." : " veces."));
         }
             System.out.println("Total coches: " + totalCoches);
         System.out.println("");
@@ -187,7 +187,7 @@ public class Parking {
         for(Marca k : cantidadCochesMarca.keySet()){
             totalCoches += cantidadCochesMarca.get(k);
             System.out.println("El coche de marca " + k.getName()
-										+  " se repite " + cantidadCochesMarca.get(k) 
+                    +  " se repite " + cantidadCochesMarca.get(k) 
                     + (cantidadCochesMarca.get(k) == 1 ? " vez." : " veces."));
         }
             System.out.println("Total coches: " + totalCoches);
